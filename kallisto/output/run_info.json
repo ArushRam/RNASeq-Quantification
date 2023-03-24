@@ -1,0 +1,13 @@
+{
+	"n_targets": 7138,
+	"n_bootstraps": 0,
+	"n_processed": 1282526,
+	"n_pseudoaligned": 1279946,
+	"n_unique": 244016,
+	"p_pseudoaligned": 99.8,
+	"p_unique": 19.0,
+	"kallisto_version": "0.48.0",
+	"index_version": 10,
+	"start_time": "Thu Mar 23 18:47:59 2023",
+	"call": "kallisto quant -i kallisto/index -o kallisto/output -l 200 -s 10 --single data/reads.fastq"
+}
