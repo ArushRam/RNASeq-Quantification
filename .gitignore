@@ -1,2 +1,8 @@
 data
 kallisto/index
+writeup.fls
+writeup.log
+writeup.aux
+writeup.fdb_latexmk
+writeup.out
+writeup.synctex.gz

@@ -52,7 +52,14 @@ class IsoEM:
 
         with open('data/weights.pickle', 'wb') as handle:
             pickle.dump(self.weights, handle, protocol=pickle.HIGHEST_PROTOCOL)
-
+    
+    def get_median_relative_difference(self, theta):
+        eps = 1e-9
+        relative_error = np.abs(self.theta-theta)/(self.theta + eps)
+        median = np.median(relative_error)
+        mean = np.mean(relative_error)
+        return median, mean
+    
     def normalize(self, read_counts, transcript_lengths, mu):
         return read_counts/(transcript_lengths - mu + 1) * (transcript_lengths >= mu)
     
@@ -69,13 +76,6 @@ class IsoEM:
         length_normalized_counts = self.normalize(self.expected_counts, self.transcript_lengths, self.mu)
         new_theta = length_normalized_counts/np.sum(length_normalized_counts)
         return new_theta
-    
-    def get_median_relative_difference(self, theta):
-        eps = 1e-9
-        relative_error = np.abs(self.theta-theta)/(self.theta + eps)
-        median = np.median(relative_error)
-        mean = np.mean(relative_error)
-        return median, mean
     
     def EM(self):
         med_rel_diff, epoch = 1, 0

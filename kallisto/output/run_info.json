@@ -8,6 +8,6 @@
 	"p_unique": 19.0,
 	"kallisto_version": "0.48.0",
 	"index_version": 10,
-	"start_time": "Thu Mar 23 18:47:59 2023",
-	"call": "kallisto quant -i kallisto/index -o kallisto/output -l 200 -s 10 --single data/reads.fastq"
+	"start_time": "Fri Mar 24 16:44:02 2023",
+	"call": "kallisto quant -i kallisto/index -o kallisto/output -l 200 -s 3.17 --single data/reads.fastq"
 }
