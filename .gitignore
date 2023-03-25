@@ -6,3 +6,4 @@ writeup.aux
 writeup.fdb_latexmk
 writeup.out
 writeup.synctex.gz
+src/__pycache__

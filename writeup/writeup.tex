@@ -74,8 +74,9 @@ There are instances of transcripts with length shorter than 200. If this is the 
 \break
 \subsection*{Implementation Details}
 
-The main challenge in implementation was determining how computing weights. For this, I used a hash table of hash tables. The outer hash table is keyed by the read, and the inner hash table is keyed by the transcript ID. The values of the inner table are the weight itself, which is incremented if the key already exists, else is added as 1. This structure is not the most time efficient but considering the number of alignments (1282526) and the number of transcripts (7138), storing it in matrix form is unfeasible.
+The main challenge in implementation was determining how computing weights. For this, I used a hash table of hash tables. The outer hash table is keyed by the read, and the inner hash table is keyed by the transcript ID. The values of the inner table are the weight itself, which is incremented if the key already exists, else is added as 1. This structure is not the most time efficient but considering the number of alignments (1282526) and the number of transcripts (7138), storing it in matrix form is unfeasible. To deal with the time taken to compute weights, I only compute them if they haven't been computed and stored into a file already (else just load that file).
 \\
+
 The convergence criteria I used was median relative difference in the relative abundances between epochs. The threshold I set was 0.001.
 
 \subsection*{Results}
